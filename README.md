@@ -62,27 +62,6 @@ A lo largo del curso se trabajan muchos temas. En este repositorio irás encontr
 
 ---
 
-## 📂 Organización del repositorio
-
-> Nota: la estructura puede ir cambiando según avance en el curso.
-
-Una posible organización (y la que intento seguir) es:
-
-- `01-intro-hola-mundo/` – Primeros pasos con React Native CLI.
-- `02-typescript-bases/` – Fundamentos de TypeScript aplicados a RN.
-- `03-componentes-layout/` – Componentes básicos, estilos y Flexbox.
-- `04-navegacion/` – Stack, Tabs, Drawer, argumentos, etc.
-- `05-temas-y-context/` – Temas Dark/Light y Context API.
-- `06-apis-y-cruds/` – Axios, consumo de APIs, CRUDs.
-- `07-maps-gps/` – Google/Apple Maps, GPS, polylines.
-- `08-camara-galeria/` – Cámara, galería y manejo de imágenes.
-- `09-autenticacion/` – Autenticación con JWT.
-- `10-despliegues/` – Notas y config para builds y despliegues.
-
-Cada carpeta suele incluir su propio mini-README o comentarios en el código explicando qué se practica allí.
-
----
-
 ## 🛠️ Tecnologías y herramientas
 
 - **React Native CLI**
@@ -152,7 +131,22 @@ Para poder ejecutar los proyectos de este repo se recomienda:
 > Algunos ejemplos (como Maps, GPS o autenticación) pueden requerir claves de API o configuración adicional.
 > Esas instrucciones específicas se documentan dentro de la carpeta correspondiente.
 
+---
+
+##  Comandos más usados
+
+- Crear aplicación en React Native: ```npx @react-native-community/cli init MyFirstApp```
+- Lanzar aplicación en Android: ```npm run android```
+- Instalar dependencias en iOS: ```npx pod-install```
+- Lanzar aplicación en iOS: ```npm run ios```
+- Conocer los dispositivos iPhone disponibles: ```xcrun simctl list devices```
+- Script para arrancar en iOS con un emulador concreto:
+```"start:ios":"npm run ios -- --simulator='iPhone 16e (BF99CF25-A32A-416C-8F02-4AF8706C7953)'"```
+
+---
+
 ## 📚 Curso original
+
 Fernando Herrera – Curso de React Native CLI + TypeScript en Udemy
 - [TypeScript, React Native CLI, Google y Apple maps, cámara, GPS, polylines, hooks, autenticación, despliegues y más](https://www.udemy.com/course/react-native-fh/)
 
