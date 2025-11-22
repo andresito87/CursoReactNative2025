@@ -4,13 +4,14 @@ import {
   SafeAreaView,
 } from 'react-native-safe-area-context';
 import { CalculatorScreen } from './presentation/screens/CalculatorScreen';
+import { styles } from './config/theme/app-theme';
 
 function App() {
 
   return (
     <SafeAreaProvider>
       <SafeAreaView
-        edges={['top', 'right', 'bottom', 'left']}
+        style={styles.background}
       >
         <StatusBar
           barStyle={'light-content'}
