@@ -142,7 +142,7 @@ Para poder ejecutar los proyectos de este repo se recomienda:
 - Conocer los dispositivos iPhone disponibles: ```xcrun simctl list devices```
 - Script para arrancar en iOS con un emulador concreto:
 ```"start:ios":"npm run ios -- --simulator='iPhone 16e (BF99CF25-A32A-416C-8F02-4AF8706C7953)'"```
-
+- Limpiar caché de React Native: ```npx react-native start --resetCache```
 ---
 
 ## 📚 Curso original
