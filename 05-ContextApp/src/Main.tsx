@@ -1,16 +1,15 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react'
-import { StatusBar, Text, useColorScheme } from 'react-native'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar, useColorScheme } from 'react-native'
+import { TabNavigator } from './presentation/navigators/BottomTabNavigator';
 
 export const Main = () => {
     const isDarkMode = useColorScheme() === 'dark';
 
     return (
-        <SafeAreaProvider>
+        <NavigationContainer>
             <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
-            <SafeAreaView>
-                <Text>Hola Mundo</Text>
-            </SafeAreaView>
-        </SafeAreaProvider>
+            <TabNavigator />
+        </NavigationContainer>
     );
 }
