@@ -1,23 +1,33 @@
-import { Pressable, StyleSheet, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { colors } from '../../screens/theme/theme'
 import Ionicons, { IoniconsIconName } from '@react-native-vector-icons/ionicons'
+import { useNavigation } from '@react-navigation/native'
 
 interface Props {
     name: string,
     icon: IoniconsIconName,
     component: string
+
+    isFirst?: boolean
+    isLast?: boolean
 }
 
 
-export const MenuItem = ({ name, icon, component }: Props) => {
+export const MenuItem = ({ name, icon, component, isFirst = false, isLast = false }: Props) => {
+
+    const navigation = useNavigation<any>()
+
     return (
-        <Pressable
-            onPress={() => { }}
+        < Pressable
+            onPress={() => navigation.navigate(component)}
         >
             <View
                 style={{
                     ...styles.container,
-                    backgroundColor: colors.cardBackground
+                    backgroundColor: colors.cardBackground,
+                    ...(isFirst && { borderTopLeftRadius: 10, borderTopRightRadius: 10, paddingTop: 10 }),
+                    ...(isLast && { borderBottomLeftRadius: 10, borderBottomRightRadius: 10, paddingBottom: 10 }),
+
                 }}>
                 <Ionicons
                     name={icon}
@@ -25,10 +35,15 @@ export const MenuItem = ({ name, icon, component }: Props) => {
                     style={{ marginRight: 10 }}
                     color={colors.primary}
                 />
-
+                <Text style={{ color: colors.text }} >{name}</Text>
+                <Ionicons
+                    name='chevron-forward-outline'
+                    size={25}
+                    style={{ marginLeft: 'auto' }}
+                    color={colors.primary}
+                />
             </View>
-
-        </Pressable>
+        </Pressable >
     )
 }
 
