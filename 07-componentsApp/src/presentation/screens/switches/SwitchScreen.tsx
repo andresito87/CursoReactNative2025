@@ -3,6 +3,7 @@ import { CustomView } from '../../components/ui/CustomView';
 import { Card } from '../../components/ui/Card';
 // import { Switch } from 'react-native-gesture-handler';
 import { CustomSwitch } from '../../components/ui/CustomSwitch';
+import { Separator } from '../../components/ui/Separator';
 
 export const SwitchScreen = () => {
 
@@ -16,7 +17,7 @@ export const SwitchScreen = () => {
     });
 
     return (
-        <CustomView style={{ marginTop: 200, paddingHorizontal: 10 }}>
+        <CustomView style={{ marginTop: 100, paddingHorizontal: 10 }}>
 
             <Card>
 
@@ -26,11 +27,15 @@ export const SwitchScreen = () => {
                     text='¿Está activo?'
                 />
 
+                <Separator />
+
                 <CustomSwitch
                     isOn={state.isHungry}
                     onChange={(value) => setState({ ...state, isHungry: value })}
                     text='¿Tiene hambre?'
                 />
+
+                <Separator />
 
                 <CustomSwitch
                     isOn={state.isHappy}

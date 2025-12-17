@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "start:android": "ANDROID_SERIAL=emulator-5554 npx react-native run-android --device emulator-5554",
     "start:ios": "npm run ios -- --simulator='iPhone 16e (BF99CF25-A32A-416C-8F02-4AF8706C7953)'"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "react": "19.1.1",
     "react-native": "0.82.1",
     "react-native-gesture-handler": "^2.29.1",
+    "react-native-prompt-android": "^1.1.0",
     "react-native-safe-area-context": "^5.6.2",
     "react-native-screens": "^4.18.0"
   },

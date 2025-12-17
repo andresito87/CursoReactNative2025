@@ -1,5 +1,5 @@
 
-import { ScrollView, View } from 'react-native'
+import { ScrollView, View } from 'react-native';
 import { globalStyles } from '../theme/theme';
 import { Title } from '../../components/ui/Title';
 import { MenuItem } from '../../components/ui/MenuItem';
@@ -22,7 +22,7 @@ const animationsMenuItems: Props[] = [
         icon: 'albums-outline',
         component: 'Animation102Screen',
     }
-]
+];
 
 export const menuItems: Props[] = [
     {
@@ -55,8 +55,6 @@ export const menuItems: Props[] = [
         icon: 'flask-outline',
         component: 'ChangeThemeScreen',
     },
-
-
 ];
 
 const uiMenuItem: Props[] = [
@@ -75,7 +73,7 @@ const uiMenuItem: Props[] = [
         icon: 'document-text-outline',
         component: 'TextInputScreen',
     }
-]
+];
 
 export const HomeScreen = () => {
     return (
@@ -98,19 +96,6 @@ export const HomeScreen = () => {
                     <View style={{ marginTop: 30 }} />
 
                     {
-                        menuItems.map((item, index) => (
-                            <MenuItem
-                                key={item.component}
-                                {...item}
-                                isFirst={index === 0}
-                                isLast={index === menuItems.length - 1}
-                            />
-                        ))
-                    }
-
-                    <View style={{ marginTop: 30 }} />
-
-                    {
                         uiMenuItem.map((item, index) => (
                             <MenuItem
                                 key={item.component}
@@ -121,8 +106,23 @@ export const HomeScreen = () => {
                         ))
                     }
 
+                    <View style={{ marginTop: 30 }} />
+
+                    {
+                        menuItems.map((item, index) => (
+                            <MenuItem
+                                key={item.component}
+                                {...item}
+                                isFirst={index === 0}
+                                isLast={index === menuItems.length - 1}
+                            />
+                        ))
+                    }
+
+
+
                 </ScrollView>
             </View>
         </View>
-    )
-}
+    );
+};
