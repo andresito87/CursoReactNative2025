@@ -1,16 +1,13 @@
-import { StatusBar, useColorScheme } from 'react-native';
 import { Navigator } from './presentation/navigator/Navigator';
-import { NavigationContainer } from '@react-navigation/native';
+import { ThemeProvider } from './presentation/context/ThemeContext';
 
 export const ComponentsApp = () => {
-  const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <NavigationContainer>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <ThemeProvider>
       <Navigator />
-    </NavigationContainer>
+    </ThemeProvider>
   );
-}
+};
 
 export default ComponentsApp;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ActivityIndicator, FlatList, View } from 'react-native';
-import { colors } from '../theme/theme';
+import { colors } from '../../../config/theme/theme';
 import { FadeInImage } from '../../components/ui/FadeInImage';
 
 export const InfiniteScrollScreen = () => {

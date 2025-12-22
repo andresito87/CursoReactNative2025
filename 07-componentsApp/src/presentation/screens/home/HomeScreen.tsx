@@ -1,9 +1,9 @@
 
 import { ScrollView, View } from 'react-native';
-import { globalStyles } from '../theme/theme';
 import { Title } from '../../components/ui/Title';
 import { MenuItem } from '../../components/ui/MenuItem';
 import { IoniconsIconName } from '@react-native-vector-icons/ionicons';
+import { CustomView } from '../../components/ui/CustomView';
 
 interface Props {
     name: string;
@@ -77,52 +77,50 @@ const uiMenuItem: Props[] = [
 
 export const HomeScreen = () => {
     return (
-        <View style={globalStyles.mainContainer}>
-            <View style={globalStyles.globalMargin}>
-                <ScrollView>
-                    <Title text='Opciones del menú' safe />
+        <CustomView margin>
+            <ScrollView>
+                <Title text='Opciones del menú' safe />
 
-                    {
-                        animationsMenuItems.map((item, index) => (
-                            <MenuItem
-                                key={item.component}
-                                {...item}
-                                isFirst={index === 0}
-                                isLast={index === animationsMenuItems.length - 1}
-                            />
-                        ))
-                    }
+                {
+                    animationsMenuItems.map((item, index) => (
+                        <MenuItem
+                            key={item.component}
+                            {...item}
+                            isFirst={index === 0}
+                            isLast={index === animationsMenuItems.length - 1}
+                        />
+                    ))
+                }
 
-                    <View style={{ marginTop: 30 }} />
+                <View style={{ marginTop: 30 }} />
 
-                    {
-                        uiMenuItem.map((item, index) => (
-                            <MenuItem
-                                key={item.component}
-                                {...item}
-                                isFirst={index === 0}
-                                isLast={index === uiMenuItem.length - 1}
-                            />
-                        ))
-                    }
+                {
+                    uiMenuItem.map((item, index) => (
+                        <MenuItem
+                            key={item.component}
+                            {...item}
+                            isFirst={index === 0}
+                            isLast={index === uiMenuItem.length - 1}
+                        />
+                    ))
+                }
 
-                    <View style={{ marginTop: 30 }} />
+                <View style={{ marginTop: 30 }} />
 
-                    {
-                        menuItems.map((item, index) => (
-                            <MenuItem
-                                key={item.component}
-                                {...item}
-                                isFirst={index === 0}
-                                isLast={index === menuItems.length - 1}
-                            />
-                        ))
-                    }
-
+                {
+                    menuItems.map((item, index) => (
+                        <MenuItem
+                            key={item.component}
+                            {...item}
+                            isFirst={index === 0}
+                            isLast={index === menuItems.length - 1}
+                        />
+                    ))
+                }
 
 
-                </ScrollView>
-            </View>
-        </View>
+
+            </ScrollView>
+        </CustomView>
     );
 };

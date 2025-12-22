@@ -1,11 +1,15 @@
 
 
-import { Animated, Easing, Pressable, StyleSheet, View } from 'react-native';
-import { colors } from '../theme/theme';
-import { Text } from 'react-native-gesture-handler';
+import { Animated, Easing, StyleSheet } from 'react-native';
 import { useAnimation } from '../../hooks/useAnimation';
+import { ThemeContext } from '../../context/ThemeContext';
+import { useContext } from 'react';
+import { CustomView } from '../../components/ui/CustomView';
+import { Button } from '../../components/ui/Button';
 
 export const Animation101Screen = () => {
+
+    const { colors } = useContext(ThemeContext);
 
     const {
         animatedOpacity,
@@ -16,9 +20,12 @@ export const Animation101Screen = () => {
     } = useAnimation();
 
     return (
-        <View style={styles.container}>
+        <CustomView style={styles.container}>
             <Animated.View style={[
                 styles.purpleBox,
+                {
+                    backgroundColor: colors.primary
+                },
                 {
                     opacity: animatedOpacity,
                     transform: [
@@ -29,21 +36,25 @@ export const Animation101Screen = () => {
                 }
             ]} />
 
-            <Pressable onPress={() => {
-                fadeIn({});
-                startMovingPosition({
-                    initialPosition: -100,
-                    easing: Easing.elastic(1),
-                    duration: 750
-                });
-            }} style={{ marginTop: 10 }}>
-                <Text>FadeIn</Text>
-            </Pressable>
+            <Button
+                text='FadeIn'
+                styles={{ marginTop: 10 }}
+                onPress={() => {
+                    fadeIn({});
+                    startMovingPosition({
+                        initialPosition: -100,
+                        easing: Easing.elastic(1),
+                        duration: 750
+                    });
+                }}
+            />
 
-            <Pressable onPress={() => fadeOut({})} style={{ marginTop: 10 }}>
-                <Text>FadeOut</Text>
-            </Pressable>
-        </View>
+            <Button
+                text='FadeOut'
+                styles={{ marginTop: 10 }}
+                onPress={() => fadeOut({})}
+            />
+        </CustomView >
     );
 };
 
@@ -54,7 +65,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     purpleBox: {
-        backgroundColor: colors.primary,
         width: 150,
         height: 150
     }
