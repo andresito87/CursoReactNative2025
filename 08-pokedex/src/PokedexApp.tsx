@@ -1,12 +1,15 @@
-
-
-import { NavigationContainer } from '@react-navigation/native';
 import { StackNavigator } from './presentation/navigator/StackNavigator';
+import { ThemeContextProvider } from './presentation/context/ThemeContext';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 export const PokedexApp = () => {
     return (
-        <NavigationContainer>
-            <StackNavigator />
-        </NavigationContainer>
+        <QueryClientProvider client={queryClient}>
+            <ThemeContextProvider>
+                <StackNavigator />
+            </ThemeContextProvider>
+        </QueryClientProvider>
     );
 };

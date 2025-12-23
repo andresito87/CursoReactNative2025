@@ -1,4 +1,3 @@
-
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomeScreen } from "../screens/home/HomeScreen";
 import { PokemonScreen } from "../screens/pokemon/PokemonScreen";
@@ -14,7 +13,9 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 
 export const StackNavigator = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+            headerShown: false
+        }}>
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="PokemonScreen" component={PokemonScreen} />
             <Stack.Screen name="SearchScreen" component={SearchScreen} />
