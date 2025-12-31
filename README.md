@@ -112,7 +112,7 @@ Para poder ejecutar los proyectos de este repo se recomienda:
    (si uso varias apps organizadas por carpetas)
 
    ```bash
-   cd 01-intro-hola-mundo
+   cd 01-proyecto
    ```
 
 4. **Ejecutar en Android**
@@ -133,7 +133,7 @@ Para poder ejecutar los proyectos de este repo se recomienda:
 
 ---
 
-##  Comandos más usados
+## 🖥️ Comandos más usados
 
 - Crear aplicación en React Native: ```npx @react-native-community/cli init MyFirstApp```
 - Lanzar aplicación en Android: ```npm run android```
@@ -144,6 +144,26 @@ Para poder ejecutar los proyectos de este repo se recomienda:
 ```"start:ios":"npm run ios -- --simulator='iPhone 16e (BF99CF25-A32A-416C-8F02-4AF8706C7953)'"```
 - Limpiar caché de React Native: ```npx react-native start --resetCache```
 ---
+
+## 📸 Imágenes de los proyectos
+
+| My First App (personalized styles)                                                                                                        | iOS Calculator                                                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="./Images-Apps/myFirstApp.png" alt="My First App" width="420" /><br/><sub>Primera app del curso con estilos personalizados</sub> | <img src="./Images-Apps/iosCalculator.png" alt="iOS Calculator" width="420" /><br/><sub>Calculadora estilo iOS + estilos personalizados</sub> |
+
+| Navigation App                                                                                                                                   | Context App                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="./Images-Apps/navigationApp.png" alt="Navigation App" width="420" /><br/><sub>Navegación (Stack / Tabs / Drawer según el módulo)</sub> | <img src="./Images-Apps/contextApp.png" alt="Context App" width="420" /><br/><sub>State management con Context API + Hooks</sub> |
+
+| Components App                                                                                                                                           | Movies App                                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="./Images-Apps/componentsApp.png" alt="Components React Native App" width="420" /><br/><sub>Componentes, layouts, estilos y reutilización</sub> | <img src="./Images-Apps/moviesApp.png" alt="Movies App" width="420" /><br/><sub>App de películas (listados, detalles, consumo de API, UI)</sub> |
+
+| Pokedex App                                                                                                                                            | Maps App(Próximamente)                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| <img src="./Images-Apps/pokedexApp.png" alt="Pokedex App" width="420" /><br/><sub>Pokedex con consumo de API, listado, detalle e infinite scroll</sub> | <br/><sub>Aplicación que permite trazar rutas sobre mapas de Google y Apple Maps</sub> |
+---
+
 
 ## 📚 Curso original
 
