@@ -159,9 +159,9 @@ Para poder ejecutar los proyectos de este repo se recomienda:
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="./Images-Apps/componentsApp.png" alt="Components React Native App" width="420" /><br/><sub>Componentes, layouts, estilos y reutilización</sub> | <img src="./Images-Apps/moviesApp.png" alt="Movies App" width="420" /><br/><sub>App de películas (listados, detalles, consumo de API, UI)</sub> |
 
-| Pokedex App                                                                                                                                            | Maps App(Próximamente)                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| <img src="./Images-Apps/pokedexApp.png" alt="Pokedex App" width="420" /><br/><sub>Pokedex con consumo de API, listado, detalle e infinite scroll</sub> | <br/><sub>Aplicación que permite trazar rutas sobre mapas de Google y Apple Maps</sub> |
+| Pokedex App                                                                                                                                            | Maps App                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="./Images-Apps/pokedexApp.png" alt="Pokedex App" width="420" /><br/><sub>Pokedex con consumo de API, listado, detalle e infinite scroll</sub> | <img src="./Images-Apps/mapsApp.png" alt="Maps App" width="420" /><br/><sub>Aplicación que permite trazar rutas sobre mapas de Google y Apple Maps</sub> |
 ---
 
 

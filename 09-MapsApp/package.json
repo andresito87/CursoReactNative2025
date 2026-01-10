@@ -12,6 +12,7 @@
     "start:ios": "npm run ios -- --simulator='iPhone 16e (BF99CF25-A32A-416C-8F02-4AF8706C7953)'"
   },
   "dependencies": {
+    "@react-native-community/geolocation": "^3.4.0",
     "@react-native-masked-view/masked-view": "^0.3.2",
     "@react-native-vector-icons/fontawesome6": "^12.3.0",
     "@react-native-vector-icons/ionicons": "^12.3.0",
@@ -21,6 +22,7 @@
     "react": "19.2.0",
     "react-native": "0.83.1",
     "react-native-gesture-handler": "^2.30.0",
+    "react-native-maps": "^1.26.20",
     "react-native-permissions": "^5.4.4",
     "react-native-safe-area-context": "^5.6.2",
     "react-native-screens": "^4.19.0",
