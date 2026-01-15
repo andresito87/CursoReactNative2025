@@ -5,6 +5,9 @@ import * as eva from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AuthProvider } from './presentation/providers/AuthProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient(); // Tanstack Query Client
 
 export const ProductsApp = () => {
     const colorScheme = useColorScheme();
@@ -28,7 +31,7 @@ export const ProductsApp = () => {
     };
 
     return (
-        <>
+        <QueryClientProvider client={queryClient}>
             <IconRegistry icons={EvaIconsPack} />
             <ApplicationProvider
                 {...eva} theme={evaTheme}
@@ -39,6 +42,6 @@ export const ProductsApp = () => {
                     </AuthProvider>
                 </NavigationContainer>
             </ApplicationProvider>
-        </>
+        </QueryClientProvider>
     );
 };
