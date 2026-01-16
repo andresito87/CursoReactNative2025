@@ -3,8 +3,13 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { MainLayout } from '../../layouts/MainLayout';
 import { FullScreenLoader } from '../../components/ui/FullScreenLoader';
 import { ProductList } from '../../components/products/ProductList';
+import { FAB } from '../../components/ui/FAB';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { RootStackParams } from '../../navigation/StackNativeNavigator';
 
 export const HomeScreen = () => {
+
+    const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
     // Recupera y almacena en caché los productos
     // const { isLoading, data: products = [] } = useQuery({
@@ -27,19 +32,31 @@ export const HomeScreen = () => {
     });
 
     return (
-        <MainLayout
-            title='TesloShop - Products'
-            subtitle='Aplicación administrativa'
-        >
-            {isLoading ?
-                <FullScreenLoader />
-                : (
-                    <ProductList
-                        products={data?.pages.flat() ?? []}
-                        fetchNextPage={fetchNextPage}
-                    />
-                )
-            }
-        </MainLayout>
+        <>
+            <MainLayout
+                title='TesloShop - Products'
+                subtitle='Aplicación administrativa'
+            >
+                {isLoading ?
+                    <FullScreenLoader />
+                    : (
+                        <ProductList
+                            products={data?.pages.flat() ?? []}
+                            fetchNextPage={fetchNextPage}
+                        />
+                    )
+                }
+            </MainLayout>
+
+            <FAB
+                iconName='save-outline'
+                onPress={() => navigation.navigate('ProductScreen', { productId: 'new' })}
+                style={{
+                    position: 'absolute',
+                    bottom: 30,
+                    right: 20
+                }}
+            />
+        </>
     );
 };

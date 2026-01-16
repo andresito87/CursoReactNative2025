@@ -6,12 +6,12 @@ import { MyIcon } from '../components/ui/MyIcon';
 
 interface Props {
     title: string;
-    subtitle: string;
+    subtitle?: string;
 
     rightAction?: () => void;
     rightActionIcon?: string;
 
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 export const MainLayout = ({
