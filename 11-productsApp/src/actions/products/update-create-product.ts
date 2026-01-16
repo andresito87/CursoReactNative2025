@@ -16,12 +16,39 @@ export const updateCreateProduct = (product: Partial<Product>) => {
 };
 
 // modifica las url de las images para que las podamos almacenar en el backend
-const prepareImages = (images: string[]) => {
+const prepareImages = async (images: string[]) => {
 
-    return images.map(
+    const fileImages = images.filter(image => image.includes('file://'));
+    const currentImages = images.filter(image => !image.includes('file://'));
+
+    if (fileImages.length > 0) {
+        const uploadPromises = fileImages.map(uploadImage);
+        const uploadedImages = await Promise.all(uploadPromises);
+        currentImages.push(...uploadedImages);
+    }
+
+    return currentImages.map(
         image => image.split('/').pop()
     );
 
+};
+
+const uploadImage = async (imageFile: string) => {
+
+    const formData = new FormData();
+    formData.append('file', {
+        uri: imageFile,
+        type: 'image/jpeg',
+        name: imageFile.split('/').pop()
+    });
+
+    const { data } = await tesloApi.post<{ image: string; }>('/files/product', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });
+
+    return data.image;
 };
 
 const updateProduct = async (product: Partial<Product>) => {
@@ -29,7 +56,7 @@ const updateProduct = async (product: Partial<Product>) => {
     const { id, images = [], ...rest } = product; // extraigo el id porque el backend no lo tiene que recibir al actualizar
 
     try {
-        const checkedImages = prepareImages(images);
+        const checkedImages = await prepareImages(images);
 
         const { data } = await tesloApi.patch(`/products/${id}`, {
             images: checkedImages,
@@ -53,7 +80,7 @@ const createProduct = async (product: Partial<Product>) => {
     const { id, images = [], ...rest } = product; // extraigo el id porque el backend no lo tiene que recibir al actualizar
 
     try {
-        const checkedImages = prepareImages(images);
+        const checkedImages = await prepareImages(images);
 
         const { data } = await tesloApi.post('/products', {
             images: checkedImages,

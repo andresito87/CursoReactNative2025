@@ -10,6 +10,7 @@ import { MyIcon } from "../../components/ui/MyIcon";
 import { Product } from "../../../domain/entities/product";
 import { ProductSlideImages } from "../../components/products/ProductSlideImages";
 import { GENDERS, SIZES } from "../../../config/constants/constants";
+import { CameraAdapter } from "../../../config/adapters/camera-adapter";
 
 interface Props extends NativeStackScreenProps<RootStackParams, 'ProductScreen'> { } // Para poder leer y acceder al parámetro en la ruta
 
@@ -69,7 +70,11 @@ export const ProductScreen = ({ route, navigation }: Props) => {
                     <MainLayout
                         title={values.title.substring(0, 30)}
                         subtitle={`Precio: ${values.price} €`}
-
+                        rightAction={async () => {
+                            const photos = await CameraAdapter.getPicturesFromLibray();
+                            setFieldValue('images', [...values.images, ...photos]);
+                        }}
+                        rightActionIcon="image-outline"
                     >
                         <ScrollView style={{ flex: 1 }}>
 

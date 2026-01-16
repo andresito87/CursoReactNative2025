@@ -1,7 +1,7 @@
 import { STAGE, API_URL as PROD_URL, API_URL_IOS, API_URL_ANDROID } from "@env";
 import axios from "axios";
 import { Platform } from "react-native";
-import { StorageAdapter } from "../adapters/async-storage";
+import { StorageAdapter } from "../adapters/storage-adapter";
 
 export const API_URL =
     (STAGE === 'prod')

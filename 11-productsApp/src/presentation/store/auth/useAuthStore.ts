@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { User } from "../../../domain/entities/user";
 import { AuthStatus } from "../../../infrastructure/interfaces/auth.status";
 import { authCheckStatus, authLogin, authRegister } from "../../../actions/auth/auth";
-import { StorageAdapter } from "../../../config/adapters/async-storage";
+import { StorageAdapter } from "../../../config/adapters/storage-adapter";
 
 export interface AuthState {
     status: AuthStatus;
