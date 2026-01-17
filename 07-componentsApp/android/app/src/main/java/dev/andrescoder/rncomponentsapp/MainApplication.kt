@@ -1,4 +1,4 @@
-package com.componentsapp
+package dev.andrescoder.rncomponentsapp
 
 import android.app.Application
 import com.facebook.react.PackageList

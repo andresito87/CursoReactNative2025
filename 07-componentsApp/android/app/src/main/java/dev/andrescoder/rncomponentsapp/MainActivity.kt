@@ -1,4 +1,4 @@
-package com.componentsapp
+package dev.andrescoder.rncomponentsapp
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
