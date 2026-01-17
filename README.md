@@ -162,6 +162,18 @@ Para poder ejecutar los proyectos de este repo se recomienda:
 | Pokedex App                                                                                                                                            | Maps App                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="./Images-Apps/pokedexApp.png" alt="Pokedex App" width="420" /><br/><sub>Pokedex con consumo de API, listado, detalle e infinite scroll</sub> | <img src="./Images-Apps/mapsApp.png" alt="Maps App" width="420" /><br/><sub>Aplicación que permite trazar rutas sobre mapas de Google y Apple Maps</sub> |
+
+<table align="center">
+<th colspan="1" align="center">Products App</th>
+  <tr>
+    <td colspan="1" align="center">
+      <img src="./Images-Apps/productsApp.png" alt="Nueva App" width="420" />
+      <br/>
+      <sub>Aplicación de productos con autenticación, CRUD, cámara y subida de imágenes</sub>
+    </td>
+  </tr>
+</table>
+
 ---
 
 
